@@ -1,0 +1,39 @@
+const nftGallery = [] // creating a vaiable to hold the NFTs
+
+//This line declares a function named mintNFT which takes four parameters: name, eyecolor, age, and gender.
+function mintNFT(title, creator, creationDate, category) {
+    const nft = {
+        "title": title,
+        "creator": creator,
+        "creationDate": creationDate,
+        "category": category,
+    }
+// It adds the newly minted NFT to the list of NFTs.
+    nftGallery.push(nft);
+//printing a message to the console indicating that an NFT with the specified name has been minted.
+    console.log("Minted: " + title);
+
+}
+//This function will be used to display the details of all minted NFTs.
+function displayNFTs() {
+    for (let i = 0; i < nftGallery.length; i++) {
+        console.log("\nID: " + (i + 1));
+        console.log("Title: " + nftGallery[i].title);
+        console.log("Creator: " + nftGallery[i].creator);
+        console.log("Creation Date: " + nftGallery[i].creationDate);
+        console.log("Category: " + nftGallery[i].category);
+    }
+}
+// print the total number of NFTs we have minted to the console
+function getTotalSupply(){
+    console.log("\n" + nftGallery.length);
+}
+
+//calling the functions
+mintNFT("Digital Sunrise", "Alice", "2023-05-01", "Photography");
+mintNFT("Virtual Horizon", "Bob", "2023-06-15", "Digital Art");
+mintNFT("Pixelated Dreams", "Charlie", "2023-07-22", "Pixel Art");
+mintNFT("Crypto Symphony", "Diana", "2023-08-30", "Music");
+mintNFT("Meta Sculpture", "Eve", "2023-09-10", "3D Model");
+displayNFTs();
+getTotalSupply();
